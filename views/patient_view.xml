@@ -30,6 +30,7 @@
                         <group>
                             <field name="gender"/>
                             <field name="ref"/>
+                            <field name="active" invisible="1"/>
                         </group>
                     </group>
                 </sheet>
@@ -47,6 +48,17 @@
                 <field name="ref"/>
                 <field name="age"/>
                 <field name="gender"/>
+                
+                <filter name="filter_male" string="Male" domain="[('gender', '=', 'male')]"/>        <!-- used to add filters in the search view -->
+                <filter name="filter_female" string="Female" domain="[('gender', '=', 'female')]"/>
+                <seprator/>          <!--  acts as an AND operator between different filters  -->
+                <filter name="filter_kids" string="Kids" domain="[('age', '&lt;=', 5)]"/>
+                <seprator/>
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+                
+                <group expand="0" string="Group By">                 <!--  used to add the group by function in the search view  -->
+                    <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
+                </group>
             </search>
             </field>
     </record>
