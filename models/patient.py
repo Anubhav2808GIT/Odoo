@@ -9,4 +9,4 @@ class HospitalPatient(models.Model):
     ref = fields.Char(string='Reference')
     age = fields.Integer(string='Age')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")
-    active = fields.Boolean(string='Active').           # gives the Visibility of the records in the view.
+    active = fields.Boolean(string='Active' default=True)           # gives the Visibility of the records in the view.
