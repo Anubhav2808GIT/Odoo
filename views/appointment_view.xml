@@ -2,7 +2,7 @@
 <odoo>
     
     <!--  CREATING TREE VIEW (also known as list view)  -->
-    <record id="view_hospital_patient_tree" model="ir.ui.view">
+    <record id="view_hospital_appointment_tree" model="ir.ui.view">
             <field name="name">hospital.appointment.form</field>
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
@@ -12,14 +12,15 @@
     </record>
     
     <!--  CREATING FORM VIEW  -->
-    <record id="view_hospital_patient_form" model="ir.ui.view">
+    <record id="view_hospital_appointment_form" model="ir.ui.view">
             <field name="name">hospital.appointment.form</field>
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
             <form>                <!-- instead of form we can use <tree>, also update it in names also -->
                 <sheet>               <!-- to create borders around the form  -->
                     <group>               <!--  to give a label to the fields in the form  -->
-                        <group>                 
+                        <group>
+                            <field name="patient_id">
                         </group>              <!-- by adding these two groups, we split the form in 2 -->
                         <group>
                         </group>
@@ -35,7 +36,7 @@
     </record>
     
     <!--  CREATING SEARCH VIEW (also known as control panel view)  -->
-    <record id="view_hospital_patient_search" model="ir.ui.view">
+    <record id="view_hospital_appointment_search" model="ir.ui.view">
             <field name="name">hospital.appointment.search</field>
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
