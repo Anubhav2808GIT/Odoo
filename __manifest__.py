@@ -10,6 +10,7 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/patient_view.xml',
+        'views/appointment_view.xml',
     ],  # contains all other data files with the module's initial data
     'demo': [],  # contains data files with demonstration data
     'installable': True,  # works in odoo 14
