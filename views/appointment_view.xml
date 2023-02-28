@@ -1,1 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!--  CREATING TREE VIEW (also known as list view)  -->
+    <record id="view_hospital_patient_tree" model="ir.ui.view">
+            <field name="name">hospital.appointment.form</field>
+            <field name="model">hospital.appointment</field>
+            <field name="arch" type="xml">
+            <tree>                <!-- used to create a tree or list on the main page -->
+            </tree>
+            </field>
+    </record>
+    
+    <!--  CREATING FORM VIEW  -->
+    <record id="view_hospital_patient_form" model="ir.ui.view">
+            <field name="name">hospital.appointment.form</field>
+            <field name="model">hospital.appointment</field>
+            <field name="arch" type="xml">
+            <form>                <!-- instead of form we can use <tree>, also update it in names also -->
+                <sheet>               <!-- to create borders around the form  -->
+                    <group>               <!--  to give a label to the fields in the form  -->
+                        <group>                 
+                        </group>              <!-- by adding these two groups, we split the form in 2 -->
+                        <group>
+                        </group>
+                    </group>
+                </sheet>
+                <!----------- CHATTER ----------->          
+                <div class='oe_chatter'>      
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+            </form>
+            </field>
+    </record>
+    
+    <!--  CREATING SEARCH VIEW (also known as control panel view)  -->
+    <record id="view_hospital_patient_search" model="ir.ui.view">
+            <field name="name">hospital.appointment.search</field>
+            <field name="model">hospital.appointment</field>
+            <field name="arch" type="xml">
+            <search>                <!--  This is used to define the search section that we see on the main page of our menu  -->
+            </search>
+            </field>
+    </record>
+    
+    <!--  CREATING WINDOW ACTION  -->
+    <record id="action_hospital_appointment" model="ir.actions.act_window">
+            <field name="name">Appointment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.appointment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_no_content_smiling_face">
+                    Create your first appointment
+                </p>
+            </field>
+        </record>
 
+    <menuitem id="menu_appointment"
+              name="Appointment"
+              parent="menu_patient_master"
+              action="action_hospital_appointment"
+              sequence="0"/>        <!-- this menu item is not included in menu.xml beacause it causes an installation error -->
+</odoo>
