@@ -5,7 +5,7 @@
     'author': 'Anubhav',
     'summary': 'System for Hospital Management',
     'description': 'This is a system for Hospital Management',
-    'depends': [],  # The list of modules that must install before installing the module
+    'depends': ['mail'],  # The list of modules that must install before installing the module
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
