@@ -3,6 +3,7 @@ from odoo import api, fields, models
 
 class HospitalPatient(models.Model):
     _name = "hospital.patient"
+    _inherit = ["mail.thread", "mail.activity.mixin"]     # both are part of mail module in odoo-->addons, inherit is used for chatter.
     _description = "Hospital Patient"
 
     name = fields.Char(string='Name')
