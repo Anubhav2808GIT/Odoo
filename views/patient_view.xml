@@ -64,6 +64,9 @@
                 <group expand="0" string="Group By">                 <!--  used to add the group by function in the search view  -->
                     <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
                 </group>
+                <searchpanel>              <!--  The main purpose is to provide a filtering view in the easiest and most advanced way based on given data.  -->
+                    <field name="gender" icon="fa-users" select="multi" enable_counters="1"/>
+                </searchpanel>
             </search>
             </field>
     </record>
