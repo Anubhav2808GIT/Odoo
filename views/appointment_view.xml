@@ -47,7 +47,7 @@
     
     <!--  CREATING WINDOW ACTION  -->
     <record id="action_hospital_appointment" model="ir.actions.act_window">
-            <field name="name">Appointment</field>
+            <field name="name">Appointments</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">hospital.appointment</field>
             <field name="view_mode">tree,form</field>
@@ -60,7 +60,7 @@
         </record>
 
     <menuitem id="menu_appointment"
-              name="Appointment"
+              name="Appointments"
               parent="menu_patient_master"
               action="action_hospital_appointment"
               sequence="0"/>        <!-- this menu item is not included in menu.xml beacause it causes an installation error -->
