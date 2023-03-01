@@ -10,3 +10,4 @@ class HospitalAppointment(models.Model):
     gender = fields.Selection(related="patient_id.gender")     # we can add another attribute, "read_only=True/False" to make it editable. By default it is True.
     appointment_time = fields.Datetime(string = 'Appointment Time' , default = fields.Datetime.now)
     booking_date = fields.Date(string = 'Booking Date' , default = fields.Date.context_today)
+    ref = fields.Char(string='Reference', default = 'Odoo Mates')
