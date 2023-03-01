@@ -3,11 +3,14 @@
     
     <!--  CREATING TREE VIEW (also known as list view)  -->
     <record id="view_hospital_appointment_tree" model="ir.ui.view">
-            <field name="name">hospital.appointment.form</field>
+            <field name="name">hospital.appointment.tree</field>
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
-            <tree>                <!-- used to create a tree or list on the main page -->
-            </tree>
+                <tree>             <!-- used to create a tree or list on the main page -->
+                    <field name="patient_id">
+                    <field name="appointment_time">
+                    <field name="booking_date">
+                </tree>
             </field>
     </record>
     
@@ -21,6 +24,8 @@
                     <group>               <!--  to give a label to the fields in the form  -->
                         <group>
                             <field name="patient_id">
+                            <field name="appointment_time">
+                            <field name="booking_date">
                         </group>              <!-- by adding these two groups, we split the form in 2 -->
                         <group>
                         </group>
