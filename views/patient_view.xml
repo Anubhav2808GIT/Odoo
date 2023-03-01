@@ -57,8 +57,8 @@
                 
                 <filter name="filter_male" string="Male" domain="[('gender', '=', 'male')]"/>        <!-- used to add filters in the search view -->
                 <filter name="filter_female" string="Female" domain="[('gender', '=', 'female')]"/>
-                <seprator/>          <!--  acts as an AND operator between different filters  -->
-                <filter name="filter_kids" string="Kids" domain="[('age', '&lt;=', 5)]"/>
+     <!--           <seprator/>          <!--  acts as an AND operator between different filters  ->
+                <filter name="filter_kids" string="Kids" domain="[('age', '&lt;=', 5)]"/>                 beacuse we have added a compute attribute in age that is a dependent function  -->
                 <seprator/>
                 <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
                 
