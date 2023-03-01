@@ -7,6 +7,7 @@ class HospitalPatient(models.Model):
     _description = "Hospital Patient"
 
     name = fields.Char(string='Name' , tracking = True)   #Track visibility is used to track the changes made to the fields, as our system is a multi-user system and the different people can access the same record. 
+    date_of_birth = field.Date(string='Date Of Birth')
     ref = fields.Char(string='Reference', default = 'Odoo Mates')
     age = fields.Integer(string='Age', tracking = True)
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender", tracking = True, default = 'Female')
