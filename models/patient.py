@@ -1,3 +1,4 @@
+from datetime import date
 from odoo import api, fields, models
 
 
@@ -9,6 +10,15 @@ class HospitalPatient(models.Model):
     name = fields.Char(string='Name' , tracking = True)   #Track visibility is used to track the changes made to the fields, as our system is a multi-user system and the different people can access the same record. 
     date_of_birth = field.Date(string='Date Of Birth')
     ref = fields.Char(string='Reference', default = 'Odoo Mates')
-    age = fields.Integer(string='Age', tracking = True)
+    age = fields.Integer(string='Age', compute='_compute_age' , tracking = True)
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender", tracking = True, default = 'Female')
     active = fields.Boolean(string='Active' default=True)           # gives the Visibility of the records in the view.
+    
+    @api.depends('date_of_birth')
+    def _compute_age(self):
+        for rec in self:
+            today = date.today()
+            if rec.date_of_birth:
+                rec.age = today.year - rec.date_of_birth.year
+            else:
+                rec.age=1
