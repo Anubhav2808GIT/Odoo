@@ -13,7 +13,7 @@ class HospitalAppointment(models.Model):
     booking_date = fields.Date(string = 'Booking Date' , default = fields.Date.context_today)
     ref = fields.Char(string='Reference')
     prescription = fields.Html(string = 'Prescription')          # defining HTML field
-    priority = fields.Selection([
+    priority = fields.Selection([                   # adding Priority Widget
         ('0' , 'Normal'),
         ('1' , 'Low'),
         ('2' , 'High'),
