@@ -21,6 +21,11 @@
             <field name="arch" type="xml">
             <form create="0" delete="0" edit="0">                <!-- instead of form we can use <tree>, also update it in names also -->
                 <sheet>               <!-- to create borders around the form  -->
+                    <div>
+                        <h1>
+                            <field name="priority" widget="priority"/>             <!--   Priority Widget   -->
+                        </h1>
+                    </div>
                     <group>               <!--  to give a label to the fields in the form  -->
                         <group>
                             <field name="patient_id">
