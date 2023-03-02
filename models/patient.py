@@ -6,6 +6,7 @@ class HospitalPatient(models.Model):
     _name = "hospital.patient"
     _inherit = ["mail.thread", "mail.activity.mixin"]     # both are part of mail module in manifest file-->depends, inherit is used for chatter.
     _description = "Hospital Patient"
+    _rec_name = "name"
 
     name = fields.Char(string='Name' , tracking = True)   #Track visibility is used to track the changes made to the fields, as our system is a multi-user system and the different people can access the same record. 
     date_of_birth = field.Date(string='Date Of Birth')
