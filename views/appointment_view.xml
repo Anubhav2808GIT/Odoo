@@ -35,7 +35,7 @@
                     
                     <notebook>
                         <page string="Prescription" name="prescription">
-                            <field name="prescription", placeholder="Enter your prescription">
+                            <field name="prescription", placeholder="Enter your prescription">           <!--  This is a HTML Field  -->
                         </page>
                         <page string="Pharmacy" name="pharmacy">
                         </page>
