@@ -28,10 +28,18 @@
                             <field name="gender/">
                             <field name="booking_date">
                         </group>              <!-- by adding these two groups, we split the form in 2 -->
-                            <field name="appointment_time">
                         <group>
+                            <field name="appointment_time">
                         </group>
                     </group>
+                    
+                    <notebook>
+                        <page string="Prescription" name="prescription">
+                        </page>
+                        <page string="Pharmacy" name="pharmacy">
+                        </page>
+                    </notebook>
+                                
                 </sheet>
                 <!----------- CHATTER ----------->          
                 <div class='oe_chatter'>      
