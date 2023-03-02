@@ -27,6 +27,7 @@
                             <field name="name"/>
                             <field name="date_of_birth"/>
                             <field name="age"/>
+                            <field name="appointment_id"/>
                         </group>              <!-- by adding these two groups, we split the form in 2 -->
                         <group>
                             <field name="gender"/>
