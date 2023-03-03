@@ -38,8 +38,12 @@
                         </group>              <!-- by adding these two groups, we split the form in 2 -->
                         <group>
                             <field name="appointment_time">
-                            <button name="action_test" string="Object Button" type="object" class="oe_highlight"/>            <!--  Adding Buttons  -->
-                            <button name="%(om_hospital.action_hospital_patient)d" string="Action Button" type="action" class="oe_highlight"/>
+                            <button name="action_test" string="Object Button" type="object" 
+                                    confirm="Are you sure to execute python code ?"          <!--  shows confirmation message  -->
+                                    class="oe_highlight"/>            <!--  Adding Buttons  -->
+                            <button name="%(om_hospital.action_hospital_patient)d" string="Action Button" type="action" 
+                                    confirm="Are you sure you want to open patient action ?"
+                                    class="oe_highlight"/>
                         </group>
                     </group>
                     
