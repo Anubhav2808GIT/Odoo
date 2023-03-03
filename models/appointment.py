@@ -11,7 +11,7 @@ class HospitalAppointment(models.Model):
     gender = fields.Selection(related="patient_id.gender")     # we can add another attribute, "read_only=True/False" to make it editable. By default it is True.
     appointment_time = fields.Datetime(string = 'Appointment Time' , default = fields.Datetime.now)
     booking_date = fields.Date(string = 'Booking Date' , default = fields.Date.context_today)
-    ref = fields.Char(string='Reference')
+    ref = fields.Char(string='Reference', help="Reference of the patient form thepatient records")   # help will show a message when hover over the reference in the form
     prescription = fields.Html(string = 'Prescription')          # defining HTML field
     priority = fields.Selection([                   # adding Priority Widget
         ('0' , 'Normal'),
