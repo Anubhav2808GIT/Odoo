@@ -39,9 +39,11 @@
                         <group>
                             <field name="appointment_time">
                             <button name="action_test" string="Object Button" type="object" 
+                                    help="A message will be printed in the log"
                                     confirm="Are you sure to execute python code ?"          <!--  shows confirmation message  -->
                                     class="oe_highlight"/>            <!--  Adding Buttons  -->
                             <button name="%(om_hospital.action_hospital_patient)d" string="Action Button" type="action" 
+                                    help="On clicking this button, you will be redirected to patient records"
                                     confirm="Are you sure you want to open patient action ?"
                                     class="oe_highlight"/>
                         </group>
