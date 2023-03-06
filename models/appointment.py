@@ -30,3 +30,10 @@ class HospitalAppointment(models.Model):
         
     def action_test(self):
         print("Button Clicked!!!!!!!")
+        return{               # adding rainbow effect on clicking
+            'effect':{
+                'fadeout':'slow',         # helps to fade away the effect automatically
+                'message':'Click Successfull',
+                'type':'rainbow_man',
+            }
+        }
