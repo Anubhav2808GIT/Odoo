@@ -16,6 +16,7 @@
                            decoration-danger="state=='cancel'" decoration-warning="state=='in_consultation'">             <!-- used to create a tree or list on the main page -->
                     <field name="patient_id"/>
                     <field name="ref" optional="hide"/>      <!--  this optional will add a option to select the fields we want in the view  -->
+                    <field name="doctor_id" widget="many2one_avatar"/>
                     <field name="gender" optional="hide"/>    <!--  hide will hide the field by default  -->
                     <field name="appointment_time"/>
                     <field name="booking_date" optional='show'/>   <!--  show will show the field by default  -->
@@ -50,6 +51,7 @@
                             <field name="patient_id"/>
                             <field name="ref"/>
                             <field name="gender/">
+                            <field name="doctor_id"/>
                             <field name="booking_date" help="Date of booking">
                         </group>              <!-- by adding these two groups, we split the form in 2 -->
                         <group>
