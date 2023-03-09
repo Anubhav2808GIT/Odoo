@@ -13,7 +13,8 @@
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
                 <tree create="0" delete="0" decoration-success="state=='done'" decoration-info="state=='draft'"
-                           decoration-danger="state=='cancel'" decoration-warning="state=='in_consultation'" sample="1">             <!-- used to create a tree or list on the main page -->
+                           decoration-danger="state=='cancel'" decoration-warning="state=='in_consultation'" 
+                           sample="1" multi_edit='1'>             <!-- used to create a tree or list on the main page -->
                     <field name="patient_id"/>
                     <field name="ref" optional="hide"/>      <!--  this optional will add a option to select the fields we want in the view  -->
                     <field name="doctor_id" widget="many2one_avatar_user"/>
@@ -38,6 +39,12 @@
             <field name="arch" type="xml">
             <form create="0" delete="0" edit="0">                <!-- instead of form we can use <tree>, also update it in names also -->
                 <header>
+                    <button name="action_in_consultation" string="In Consultation" class="oe_highlight"      
+                            type="object" states="draft"/>                <!-- controlling statusbar using buttons -->
+                    <button name="action_done" string="Mark As Done" class="oe_highlight"
+                            type="object" states="in_consultation"/>
+                    <button name="action_cancel" string="In Cancel" type="object" states="draft, in_consultation"/>
+                    <button name="action_draft" string="Reset To Draft" type="object" states="cancel"/>
                     <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}" statusbar_visible="draft,in_consultation,done"/>       <!--  adds a stausbar in form, statusbar_visible tells which all states should be visible  -->   
                 </header>    
                 <sheet>               <!-- to create borders around the form  -->
