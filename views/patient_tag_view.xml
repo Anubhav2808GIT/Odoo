@@ -23,7 +23,7 @@
                                 <field name="name"/>
                             </group>
                             <group>
-                                <field name="active"/>
+                                <field name="active" widget="boolean_toggle"/>    <!--  adding widget boolean toggle  -->
                             </group>
                         </group>
                     </sheet>
