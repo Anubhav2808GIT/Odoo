@@ -13,7 +13,8 @@ class HospitalPatient(models.Model):
     age = fields.Integer(string='Age', compute='_compute_age' , tracking = True)
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender", tracking = True, default = 'Female')
     active = fields.Boolean(string='Active' default=True)           # gives the Visibility of the records in the view.
-    appointment_id = fields.Many2one('hospital.appointment', string = 'Appointment').  # for many2one fields, it is shown that rec_name._rec_name is intended to define the record value used to display it in search for many2one and other cases
+    appointment_id = fields.Many2one('hospital.appointment', string = 'Appointment')    # for many2one fields, it is shown that rec_name._rec_name is intended to define the record value used to display it in search for many2one and other cases
+    image = fields.Image(string="Image")
     
     @api.depends('date_of_birth')
     def _compute_age(self):
