@@ -22,6 +22,7 @@
             <field name="arch" type="xml">
             <form>                <!-- instead of form we can use <tree>, also update it in names also -->
                 <sheet>               <!-- to create borders around the form  -->
+                    <field name="image" widget="image" class="oe_avatar"/>
                     <group>               <!--  to give a label to the fields in the form  -->
                         <group>                 
                             <field name="name"/>
