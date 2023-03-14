@@ -1,11 +1,8 @@
 from odoo import api, fields, models
 
 
-class PatientTag(models.Model):
-    _name = "patient.tag"
-    _description = "Patient Tag"
+class CancelAppointmentWizard(models.TransientModel):        #defining a Transient Model
+    _name = "cancel.appointment.wizard"
+    _description = "Cancel Appointment Wizard"
     
-    name=fields.Char(string="Name", required=True)
-    active=fields.Boolean(string="Active", default=True)
-    color=fields.Integer(string="Color")
-    color_2=fields.Char(string="Color 2")
+    appointment_id=fields.Many2one('hospital.appointment', string="Appointment")
