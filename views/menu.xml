@@ -23,5 +23,6 @@
     <menuitem id="menu_cancel_appointment"
               name="Cancellation"
               parent="menu_appointment_master"
-              sequence="50"/>
+              action=""
+              sequence="20"/>
 </odoo>
