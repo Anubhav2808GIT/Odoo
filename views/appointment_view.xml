@@ -64,8 +64,20 @@
                             type="object" states="draft" data-hotkey='x'/>                <!-- controlling statusbar using buttons -->
                     <button name="action_done" string="Mark As Done" class="oe_highlight"
                             type="object" states="in_consultation" data-hotkey='v'/>      <!-- states="draft" means when we click on the In Consultation, our appointment will go to draft state -->
+                    
+                    
+ <!--                     Launching Wizard from Button using type="object"
+                                                                                                -->                   
                     <button name="action_cancel" string="In Cancel" type="object" 
                             states="draft, in_consultation" data-hotkey='z'/>
+<!--                    
+                          Launching Wizard from Button using type="action"
+
+                     <button name="%(om_hospital.action_cancel_appointment)d" string="In Cancel" type="action" 
+                            states="draft, in_consultation" data-hotkey='z'/>                                -->
+                    
+                    
+                    
                     <button name="action_draft" string="Reset To Draft" type="object" 
                             states="cancel" data-hotkey='r'/>
                     <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}" statusbar_visible="draft,in_consultation,done"/>       <!--  adds a stausbar in form, statusbar_visible tells which all states should be visible  -->   
